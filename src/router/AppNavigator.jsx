@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Text, View } from 'react-native';
 
 // Import pages
-import HomePage from '../pages/HomePage';
+import Game from '../pages/game';
 import ProfilePage from '../pages/ProfilePage';
 import SettingsPage from '../pages/SettingsPage';
 
@@ -16,7 +16,7 @@ const Stack = createNativeStackNavigator();
 const HomeStack = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Home" component={HomePage} />
+      <Stack.Screen name="Game" component={Game} />
       <Stack.Screen name="Profile" component={ProfilePage} />
       <Stack.Screen name="Settings" component={SettingsPage} />
     </Stack.Navigator>

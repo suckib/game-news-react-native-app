@@ -11,7 +11,11 @@ const ProfilePage = ({ navigation }) => {
 
   return (
     <View className="flex-1 bg-gray-100">
-      <Header title="Profile" subtitle="User Profile Information" />
+      <Header 
+        title="Noam Penn (Panther)" 
+        subtitle="Product Designer"
+        showAvatar={true}
+      />
       
       <ScrollView className="flex-1">
         <View className="p-4">
