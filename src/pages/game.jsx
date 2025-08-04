@@ -1,19 +1,11 @@
 import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import Header from '../components/Header';
-import Card from '../components/Card';
-import Button from '../components/Button';
 import GameCard from '../components/gameCard';
+import FooterNavigation from '../components/footerNavigation';
 import Svg, { Path } from 'react-native-svg';
 
 const Game = ({ navigation }) => {
-  const handleNavigateToProfile = () => {
-    navigation.navigate('Profile');
-  };
-
-  const handleNavigateToSettings = () => {
-    navigation.navigate('Settings');
-  };
 
   return (
     <View className="flex-1 bg-[#fafafa]">
@@ -78,18 +70,21 @@ const Game = ({ navigation }) => {
 
         {/* Game Cards */}
         <View className="p-2 px-9 -mt-1">
-          <GameCard />
+          <GameCard navigation={navigation} />
         </View>
         <View className="p-2 px-9 mt-4">
-          <GameCard />
+          <GameCard navigation={navigation} />
         </View>
         <View className="p-2 px-9 mt-4">
-          <GameCard />
+          <GameCard navigation={navigation} />
         </View>
         <View className="p-2 px-9 mt-4">
-          <GameCard />
+          <GameCard navigation={navigation} />
         </View>
       </ScrollView>
+      
+      {/* Footer Navigation */}
+      <FooterNavigation activeTab="Game board" />
     </View>
   );
 };

@@ -11,7 +11,8 @@ const GameCard = ({
   player1 = { name: "Mandler T.", nickname: "PRO" },
   player2 = { name: "Oz Y.", nickname: "The Wiz" },
   precipitation = "25%",
-  weather = "cloudy"
+  weather = "cloudy",
+  navigation
 }) => {
   return (
     <View 
@@ -230,6 +231,7 @@ const GameCard = ({
         <TouchableOpacity 
           className="left-[14px] bottom-[0px]"
           style={{ minWidth: 130 }}
+          onPress={() => navigation?.navigate('Chat')}
         >
           <LinearGradient
             colors={['#3199DD', '#32516D']}

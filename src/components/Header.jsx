@@ -4,7 +4,7 @@ import { View, Text, Image } from 'react-native';
 const Header = () => {
   return (
     <View 
-      className={`bg-[#1F1B1B] flex-row items-center mt-6 px-4 w-full`}
+      className={`bg-[#1F1B1B] flex-row items-center px-4 w-full`}
       style={{ height: 85 }}
     >
       {/* Avatar and Text Container */}
