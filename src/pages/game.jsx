@@ -36,7 +36,7 @@ const Game = ({ navigation }) => {
             </TouchableOpacity>
 
             {/* Date/Hour Dropdown */}
-            <TouchableOpacity className="w-[182px] mx-4 bg-white rounded-full px-4 py-1 border border-[##EEEEEE] ml-[4px]">
+            <TouchableOpacity className="w-[182px] mx-2 bg-white rounded-full px-4 py-2 border border-[#EEEEEE] ml-[4px]">
               <View className="flex-row items-center justify-between">
                 <Text className="text-gray-600 ml-1" style={{ fontFamily: 'Rubik', fontWeight: '400', fontStyle: 'normal', fontSize: 14 }}>Date | hour...</Text>
                 <Svg width="12" height="6" viewBox="0 0 12 6" fill="none">
@@ -53,8 +53,31 @@ const Game = ({ navigation }) => {
           </View>
         </View>
 
+        {/* Doubles Games Button */}
+          <View className="mt-2 py-2 ml-[32px]">
+            <TouchableOpacity 
+              className="rounded-full border items-center justify-center"
+              style={{ 
+                height: 34, 
+                width: 125, 
+                borderColor: '#145E94',
+                borderWidth: 1
+              }}
+            >
+              <Text style={{ 
+                fontFamily: 'Rubik', 
+                fontWeight: '400', 
+                fontStyle: 'normal', 
+                fontSize: 14, 
+                color: '#145E94' 
+              }}>
+                Doubles games
+              </Text>
+            </TouchableOpacity>
+          </View>
+
         {/* Game Cards */}
-        <View className="px-4">
+        <View className="p-2 px-9">
           <GameCard />
         </View>
       </ScrollView>

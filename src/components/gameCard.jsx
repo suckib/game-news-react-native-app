@@ -1,113 +1,209 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
+import Svg, { G, Path, Defs, ClipPath, Rect } from 'react-native-svg';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const GameCard = ({ 
   location = "Yarkon Park, Tel Aviv | Court #2",
   date = "02/24/2023",
   time = "14:00",
   messages = "26 messages",
-  player1 = { name: "Mandler T.", nickname: "PRO", avatar: null },
-  player2 = { name: "Oz Y.", nickname: "The Wiz", avatar: null },
+  player1 = { name: "Mandler T.", nickname: "PRO" },
+  player2 = { name: "Oz Y.", nickname: "The Wiz" },
   precipitation = "25%",
   weather = "cloudy"
 }) => {
   return (
     <View 
-      className="bg-white rounded-lg shadow-lg"
-      style={{ width: 350, height: 238 }}
+      className="bg-white rounded-xl border border-[#EEEEEE]"
+      style={{ width: 350, height: 249.5 }}
     >
       {/* Header Section */}
-      <View className="px-4 pt-4 pb-3">
+      <View className="px-4 pt-4 pb-3 border-b border-[#EEEEEE]">
         <View className="flex-row justify-between items-start">
-          <Text className="text-[#4774AD] text-lg font-semibold flex-1">
+          <Text className="flex-1 -mt-1 ml-1" style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 16, color: '#145E94' }}>
             {location}
           </Text>
           <TouchableOpacity className="ml-2">
-            <Text className="text-[#4774AD] text-xl">⚬⚬⚬</Text>
+            <Svg width="18" height="19" viewBox="0 0 18 19" fill="none">
+              <G clipPath="url(#clip0_1578_3295)">
+                <Path 
+                  d="M14.1172 12.0177C13.0444 12.0177 12.0912 12.539 11.4973 13.3415L6.38357 10.7282C6.46936 10.4367 6.51562 10.1285 6.51562 9.80963C6.51562 9.37776 6.43096 8.96535 6.27766 8.58785L11.6371 5.36775C12.2351 6.06963 13.125 6.51562 14.1172 6.51562C15.9135 6.51562 17.375 5.05417 17.375 3.25781C17.375 1.46145 15.9135 0 14.1172 0C12.3208 0 10.8594 1.46145 10.8594 3.25781C10.8594 3.673 10.9376 4.0702 11.0798 4.43569L5.70696 7.66382C5.10941 6.98265 4.23302 6.55182 3.25781 6.55182C1.46145 6.55182 0 8.01328 0 9.80963C0 11.606 1.46145 13.0674 3.25781 13.0674C4.34817 13.0674 5.31501 12.529 5.90667 11.704L11.0055 14.3097C10.9106 14.615 10.8594 14.9394 10.8594 15.2755C10.8594 17.0719 12.3208 18.5333 14.1172 18.5333C15.9135 18.5333 17.375 17.0719 17.375 15.2755C17.375 13.4792 15.9135 12.0177 14.1172 12.0177ZM14.1172 1.08594C15.3148 1.08594 16.2891 2.06024 16.2891 3.25781C16.2891 4.45538 15.3148 5.42969 14.1172 5.42969C12.9196 5.42969 11.9453 4.45538 11.9453 3.25781C11.9453 2.06024 12.9196 1.08594 14.1172 1.08594ZM3.25781 11.9815C2.06024 11.9815 1.08594 11.0072 1.08594 9.80963C1.08594 8.61206 2.06024 7.63776 3.25781 7.63776C4.45538 7.63776 5.42969 8.61206 5.42969 9.80963C5.42969 11.0072 4.45538 11.9815 3.25781 11.9815ZM14.1172 17.4474C12.9196 17.4474 11.9453 16.4731 11.9453 15.2755C11.9453 14.0779 12.9196 13.1036 14.1172 13.1036C15.3148 13.1036 16.2891 14.0779 16.2891 15.2755C16.2891 16.4731 15.3148 17.4474 14.1172 17.4474Z" 
+                  fill="#145E94"
+                />
+              </G>
+              <Defs>
+                <ClipPath id="clip0_1578_3295">
+                  <Rect width="18" height="19" fill="white"/>
+                </ClipPath>
+              </Defs>
+            </Svg>
           </TouchableOpacity>
         </View>
         
         {/* Date, Time, Messages */}
-        <View className="flex-row items-center mt-2 space-x-4">
+        <View className="flex-row items-center mt-2 ml-1 space-x-4">
           <View className="flex-row items-center">
-            <Text className="text-gray-500 text-sm">📅 {date}</Text>
+            <Svg width="15" height="15" viewBox="0 0 15 15" fill="none" style={{ marginRight: 4 }}>
+              <Path 
+                d="M10 1.15039C10.1094 1.15039 10.2146 1.19315 10.292 1.27051C10.3694 1.34787 10.4121 1.4531 10.4121 1.5625V2.40039H12.1875C12.6283 2.40074 13.0506 2.57601 13.3623 2.8877C13.674 3.19938 13.8493 3.62171 13.8496 4.0625V12.1875C13.8493 12.6283 13.674 13.0506 13.3623 13.3623C13.0506 13.674 12.6283 13.8493 12.1875 13.8496H2.8125C2.37177 13.8491 1.94934 13.6739 1.6377 13.3623C1.32605 13.0507 1.15092 12.6282 1.15039 12.1875V4.0625L1.1582 3.89844C1.19631 3.51794 1.36494 3.16046 1.6377 2.8877C1.94934 2.57605 2.37177 2.40092 2.8125 2.40039H4.58789V1.5625C4.58789 1.4531 4.63065 1.34787 4.70801 1.27051C4.78537 1.19315 4.8906 1.15039 5 1.15039C5.1094 1.15039 5.21463 1.19315 5.29199 1.27051C5.36935 1.34787 5.41211 1.4531 5.41211 1.5625V2.40039H9.58789V1.5625C9.58789 1.4531 9.63065 1.34787 9.70801 1.27051C9.78537 1.19315 9.8906 1.15039 10 1.15039ZM1.97461 12.1875C1.97461 12.4096 2.06364 12.6222 2.2207 12.7793C2.37776 12.9364 2.59038 13.0254 2.8125 13.0254H12.1875C12.4096 13.0254 12.6222 12.9364 12.7793 12.7793C12.9364 12.6222 13.0254 12.4096 13.0254 12.1875V6.97461H1.97461V12.1875ZM2.8125 3.22461C2.34907 3.22461 1.97461 3.60014 1.97461 4.0625V6.15039H13.0254V4.0625C13.0254 3.84038 12.9364 3.62776 12.7793 3.4707C12.6222 3.31364 12.4096 3.22461 12.1875 3.22461H10.4121V4.0625C10.4121 4.1719 10.3694 4.27713 10.292 4.35449C10.2146 4.43185 10.1094 4.47461 10 4.47461C9.8906 4.47461 9.78537 4.43185 9.70801 4.35449C9.63065 4.27713 9.58789 4.1719 9.58789 4.0625V3.22461H5.41211V4.0625C5.41211 4.1719 5.36935 4.27713 5.29199 4.35449C5.21463 4.43185 5.1094 4.47461 5 4.47461C4.8906 4.47461 4.78537 4.43185 4.70801 4.35449C4.63065 4.27713 4.58789 4.1719 4.58789 4.0625V3.22461H2.8125Z" 
+                fill="#145E94" 
+                stroke="#145E94" 
+                strokeWidth="0.2"
+              />
+            </Svg>
+            <Text style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 14, color: '#B0AAAA' }}>{date}</Text>
           </View>
-          <View className="flex-row items-center">
-            <Text className="text-gray-500 text-sm">🕐 {time}</Text>
+          <View className="flex-row items-center ml-2">
+            <Svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ marginRight: 4 }}>
+              <G clipPath="url(#clip0_1579_3588)">
+                <Path 
+                  d="M7 13.125C3.6225 13.125 0.875 10.3775 0.875 7C0.875 3.6225 3.6225 0.875 7 0.875C10.3775 0.875 13.125 3.6225 13.125 7C13.125 10.3775 10.3775 13.125 7 13.125ZM7 1.75C4.10375 1.75 1.75 4.10375 1.75 7C1.75 9.89625 4.10375 12.25 7 12.25C9.89625 12.25 12.25 9.89625 12.25 7C12.25 4.10375 9.89625 1.75 7 1.75Z" 
+                  fill="#145E94"
+                />
+                <Path 
+                  d="M8.75003 9.1875C8.67128 9.1875 8.59253 9.17 8.52253 9.12625L6.33503 7.81375C6.27024 7.77481 6.21676 7.7196 6.17992 7.65359C6.14308 7.58759 6.12416 7.51309 6.12503 7.4375V3.9375C6.12503 3.6925 6.31753 3.5 6.56253 3.5C6.80753 3.5 7.00003 3.6925 7.00003 3.9375V7.1925L8.97753 8.37375C9.05898 8.42367 9.12194 8.49879 9.15685 8.58771C9.19177 8.67663 9.19674 8.77452 9.17102 8.86652C9.1453 8.95853 9.09028 9.03964 9.01431 9.09756C8.93834 9.15548 8.84556 9.18706 8.75003 9.1875Z" 
+                  fill="#145E94"
+                />
+              </G>
+              <Defs>
+                <ClipPath id="clip0_1579_3588">
+                  <Rect width="14" height="14" fill="white"/>
+                </ClipPath>
+              </Defs>
+            </Svg>
+            <Text className="-ml-[2px]" style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 14, color: '#B0AAAA' }}>{time}</Text>
           </View>
-          <View className="flex-row items-center">
-            <Text className="text-gray-500 text-sm">💬 {messages}</Text>
+          <View className="flex-row items-center ml-2">
+            <Svg width="13" height="13" viewBox="0 0 13 13" fill="none" style={{ marginRight: 4 }}>
+              <Path 
+                d="M6.525 12.05C7.61774 12.05 8.68594 11.726 9.59452 11.1189C10.5031 10.5118 11.2113 9.64889 11.6294 8.63933C12.0476 7.62976 12.157 6.51887 11.9438 5.44713C11.7307 4.37538 11.2044 3.39092 10.4318 2.61824C9.65908 1.84555 8.67462 1.31935 7.60287 1.10616C6.53113 0.892981 5.42023 1.00239 4.41067 1.42057C3.40111 1.83874 2.53822 2.5469 1.93113 3.45548C1.32404 4.36406 1 5.43226 1 6.525C1 7.43847 1.221 8.29914 1.61389 9.05852L1 12.05L3.99148 11.4361C4.75025 11.8284 5.61215 12.05 6.525 12.05Z" 
+                stroke="#145E94" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              />
+            </Svg>
+            <Text style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 14, color: '#B0AAAA' }}>{messages}</Text>
           </View>
         </View>
       </View>
 
       {/* Players Section */}
-      <View className="px-4 py-3">
+      <View className="px-4 py-3 border-b border-[#EEEEEE]">
         <View className="flex-row items-center justify-between">
           {/* Player 1 */}
           <View className="items-center">
-            <View className="w-16 h-16 rounded-full border-2 border-[#4774AD] mb-2 overflow-hidden">
-              {player1.avatar ? (
-                <Image source={player1.avatar} className="w-full h-full" style={{ resizeMode: 'cover' }} />
-              ) : (
-                <View className="w-full h-full bg-gray-200 items-center justify-center">
+            <View className="relative">
+              <View className="w-[57px] h-[57px] rounded-full overflow-hidden justify-center items-center border-[1px] border-[#4774AD] bg-[#ffffff] mb-2">
+                <View className="w-[52px] h-[52px] items-center justify-center">
                   <Image 
-                    source={{ uri: 'https://via.placeholder.com/64x64/cccccc/666666?text=M' }}
+                    source={require('../assets/pro_game.png')}
                     className="w-full h-full"
                     style={{ resizeMode: 'cover' }}
                   />
                 </View>
-              )}
+              </View>
               {/* Brazil Flag */}
-              <View className="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-green-500 border border-white">
-                <Text className="text-xs">🇧🇷</Text>
+              <View className="absolute bottom-3 right-0 w-5 h-5 z-20 items-center justify-center">
+                <Svg width="24" height="20" viewBox="0 0 20 21" fill="none">
+                  <G clipPath="url(#clip0_brazil_flag_1)">
+                    <Path d="M19.0957 15.119C19.0957 15.7055 18.8733 16.2681 18.4774 16.6828C18.0815 17.0976 17.5445 17.3306 16.9846 17.3306H2.20681C1.64691 17.3306 1.10994 17.0976 0.714033 16.6828C0.318123 16.2681 0.0957031 15.7055 0.0957031 15.119V5.1666C0.0957031 4.58003 0.318123 4.01749 0.714033 3.60273C1.10994 3.18797 1.64691 2.95496 2.20681 2.95496H16.9846C17.5445 2.95496 18.0815 3.18797 18.4774 3.60273C18.8733 4.01749 19.0957 4.58003 19.0957 5.1666V15.119Z" fill="#009B3A"/>
+                    <Path d="M17.3685 10.1428L9.59538 16.2934L1.82227 10.1428L9.59538 3.9917L17.3685 10.1428Z" fill="#FEDF01"/>
+                    <Path d="M9.58319 13.6715C11.4656 13.6715 12.9916 12.0729 12.9916 10.1008C12.9916 8.12881 11.4656 6.53015 9.58319 6.53015C7.70079 6.53015 6.1748 8.12881 6.1748 10.1008C6.1748 12.0729 7.70079 13.6715 9.58319 13.6715Z" fill="#002776"/>
+                    <Path d="M6.57537 8.42157C6.39835 8.77104 6.27846 9.14912 6.2207 9.5401C8.32918 9.37976 11.1908 10.5857 12.4189 12.0807C12.6311 11.7468 12.7884 11.373 12.885 10.9727C11.3692 9.42012 8.70654 8.41272 6.57537 8.42157Z" fill="#CBE9D4"/>
+                    <Path d="M6.42871 10.2716H6.95649V10.8245H6.42871V10.2716ZM6.95649 11.3774H7.48427V11.9303H6.95649V11.3774Z" fill="#88C9F9"/>
+                    <Path d="M8.0127 10.2716H8.54047V10.8245H8.0127V10.2716ZM9.06825 10.8245H9.59603V11.3774H9.06825V10.8245ZM11.1794 11.9303H11.7071V12.4832H11.1794V11.9303ZM9.59603 12.4832H10.1238V13.0361H9.59603V12.4832ZM11.1794 9.16577H11.7071V9.71868H11.1794V9.16577Z" fill="#55ACEE"/>
+                    <Path d="M10.123 11.3774H10.6508V11.9304H10.123V11.3774Z" fill="#3B88C3"/>
+                  </G>
+                  <Defs>
+                    <ClipPath id="clip0_brazil_flag_1">
+                      <Rect width="19" height="19.9048" fill="white" transform="translate(0.0957031 0.19043)"/>
+                    </ClipPath>
+                  </Defs>
+                </Svg>
               </View>
             </View>
-            <Text className="text-black font-semibold text-sm">{player1.name}</Text>
-            <Text className="text-gray-500 text-xs">({player1.nickname})</Text>
+            <Text className="-mt-1" style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 14, color: '#210C0C' }}>{player1.name}</Text>
+            <Text className="-mt-1" style={{ fontFamily: 'Poppins', fontWeight: '400', fontSize: 12, color: '#B0AAAA' }}>({player1.nickname})</Text>
           </View>
-
-          {/* VS */}
-          <Text className="text-[#4774AD] text-xl font-bold mx-4">vs.</Text>
 
           {/* Player 2 */}
           <View className="items-center">
-            <View className="w-16 h-16 rounded-full border-2 border-[#4774AD] mb-2 overflow-hidden">
-              {player2.avatar ? (
-                <Image source={player2.avatar} className="w-full h-full" style={{ resizeMode: 'cover' }} />
-              ) : (
-                <View className="w-full h-full bg-gray-200 items-center justify-center">
+            <View className="relative">
+              <View className="w-[57px] h-[57px] rounded-full overflow-hidden justify-center items-center border-[1px] border-[#4774AD] bg-[#ffffff] mb-2">
+                <View className="w-[52px] h-[52px] items-center justify-center">
                   <Image 
-                    source={{ uri: 'https://via.placeholder.com/64x64/cccccc/666666?text=O' }}
+                    source={require('../assets/wiz_game.png')}
                     className="w-full h-full"
                     style={{ resizeMode: 'cover' }}
                   />
                 </View>
-              )}
+              </View>
               {/* Brazil Flag */}
-              <View className="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-green-500 border border-white">
-                <Text className="text-xs">🇧🇷</Text>
+              <View className="absolute bottom-3 right-0 w-5 h-5 z-20 items-center justify-center">
+                <Svg width="24" height="20" viewBox="0 0 20 21" fill="none">
+                  <G clipPath="url(#clip0_brazil_flag_1)">
+                    <Path d="M19.0957 15.119C19.0957 15.7055 18.8733 16.2681 18.4774 16.6828C18.0815 17.0976 17.5445 17.3306 16.9846 17.3306H2.20681C1.64691 17.3306 1.10994 17.0976 0.714033 16.6828C0.318123 16.2681 0.0957031 15.7055 0.0957031 15.119V5.1666C0.0957031 4.58003 0.318123 4.01749 0.714033 3.60273C1.10994 3.18797 1.64691 2.95496 2.20681 2.95496H16.9846C17.5445 2.95496 18.0815 3.18797 18.4774 3.60273C18.8733 4.01749 19.0957 4.58003 19.0957 5.1666V15.119Z" fill="#009B3A"/>
+                    <Path d="M17.3685 10.1428L9.59538 16.2934L1.82227 10.1428L9.59538 3.9917L17.3685 10.1428Z" fill="#FEDF01"/>
+                    <Path d="M9.58319 13.6715C11.4656 13.6715 12.9916 12.0729 12.9916 10.1008C12.9916 8.12881 11.4656 6.53015 9.58319 6.53015C7.70079 6.53015 6.1748 8.12881 6.1748 10.1008C6.1748 12.0729 7.70079 13.6715 9.58319 13.6715Z" fill="#002776"/>
+                    <Path d="M6.57537 8.42157C6.39835 8.77104 6.27846 9.14912 6.2207 9.5401C8.32918 9.37976 11.1908 10.5857 12.4189 12.0807C12.6311 11.7468 12.7884 11.373 12.885 10.9727C11.3692 9.42012 8.70654 8.41272 6.57537 8.42157Z" fill="#CBE9D4"/>
+                    <Path d="M6.42871 10.2716H6.95649V10.8245H6.42871V10.2716ZM6.95649 11.3774H7.48427V11.9303H6.95649V11.3774Z" fill="#88C9F9"/>
+                    <Path d="M8.0127 10.2716H8.54047V10.8245H8.0127V10.2716ZM9.06825 10.8245H9.59603V11.3774H9.06825V10.8245ZM11.1794 11.9303H11.7071V12.4832H11.1794V11.9303ZM9.59603 12.4832H10.1238V13.0361H9.59603V12.4832ZM11.1794 9.16577H11.7071V9.71868H11.1794V9.16577Z" fill="#55ACEE"/>
+                    <Path d="M10.123 11.3774H10.6508V11.9304H10.123V11.3774Z" fill="#3B88C3"/>
+                  </G>
+                  <Defs>
+                    <ClipPath id="clip0_brazil_flag_1">
+                      <Rect width="19" height="19.9048" fill="white" transform="translate(0.0957031 0.19043)"/>
+                    </ClipPath>
+                  </Defs>
+                </Svg>
               </View>
             </View>
-            <Text className="text-black font-semibold text-sm">{player2.name}</Text>
-            <Text className="text-gray-500 text-xs">({player2.nickname})</Text>
+            <Text className="-mt-1" style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 14, color: '#210C0C' }}>{player2.name}</Text>
+            <Text className="-mt-1" style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 12, color: '#B0AAAA' }}>({player2.nickname})</Text>
           </View>
+
+          <Text style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 21, color: '#145E94' }} className="mx-3 mb-12 left-[6px]">vs.</Text>
 
           {/* Additional Players */}
           <View className="items-center">
-            <View className="w-16 h-16 rounded-full border-2 border-dashed border-gray-400 mb-2 items-center justify-center">
-              <Text className="text-gray-400 text-3xl">+</Text>
+            <View className="w-16 h-16 rounded-full mb-2 items-center justify-center">
+              <Svg width="57" height="57" viewBox="0 0 57 57" fill="none">
+                <G clipPath="url(#clip0_add_player_1)">
+                  <Svg width="57" height="57" viewBox="0 0 57 57" fill="none">
+                    <Path d="M28.5 0.5C44.24 0.5 57 13.26 57 28.5S44.24 56.5 28.5 56.5S0 44.24 0 28.5S12.76 0.5 28.5 0.5Z" stroke="#145E94" strokeDasharray="2 2" fill="none"/>
+                    <Path d="M34.6666 28.4445H28.5555V22.3334C28.5555 22.186 28.497 22.0447 28.3928 21.9406C28.2886 21.8364 28.1473 21.7778 27.9999 21.7778C27.8526 21.7778 27.7113 21.8364 27.6071 21.9406C27.5029 22.0447 27.4444 22.186 27.4444 22.3334V28.4445H21.3333C21.1859 28.4445 21.0446 28.503 20.9404 28.6072C20.8362 28.7114 20.7777 28.8527 20.7777 29.0001C20.775 29.0723 20.7877 29.1442 20.8151 29.2111C20.8426 29.2779 20.884 29.3381 20.9366 29.3876C20.9893 29.4371 21.0519 29.4747 21.1203 29.4979C21.1888 29.5212 21.2614 29.5295 21.3333 29.5223H27.4444V35.6667C27.4444 35.8141 27.5029 35.9554 27.6071 36.0596C27.7113 36.1637 27.8526 36.2223 27.9999 36.2223C28.1473 36.2223 28.2886 36.1637 28.3928 36.0596C28.497 35.9554 28.5555 35.8141 28.5555 35.6667V29.5556H34.6666C34.8139 29.5556 34.9552 29.4971 35.0594 29.3929C35.1636 29.2887 35.2222 29.1474 35.2222 29.0001C35.2222 28.8527 35.1636 28.7114 35.0594 28.6072C34.9552 28.503 34.8139 28.4445 34.6666 28.4445Z" fill="#145E94"/>
+                  </Svg>
+                </G>
+                <Defs>
+                  <ClipPath id="clip0_add_player_1">
+                    <Rect width="57" height="57" fill="white"/>
+                  </ClipPath>
+                </Defs>
+              </Svg>
             </View>
-            <Text className="text-gray-400 text-sm">player</Text>
-            <Text className="text-gray-400 text-xs">(nickname)</Text>
+            <Text className="-mt-1" style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 14, color: '#210C0C' }}>player</Text>
+            <Text className="-mt-1" style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 12, color: '#B0AAAA' }}>(nickname)</Text>
           </View>
 
           <View className="items-center">
-            <View className="w-16 h-16 rounded-full border-2 border-dashed border-gray-400 mb-2 items-center justify-center">
-              <Text className="text-gray-400 text-3xl">+</Text>
+            <View className="w-16 h-16 rounded-full mb-2 items-center justify-center">
+              <Svg width="57" height="57" viewBox="0 0 57 57" fill="none">
+                <G clipPath="url(#clip0_add_player_2)">
+                  <Svg width="57" height="57" viewBox="0 0 57 57" fill="none">
+                    <Path d="M28.5 0.5C44.24 0.5 57 13.26 57 28.5S44.24 56.5 28.5 56.5S0 44.24 0 28.5S12.76 0.5 28.5 0.5Z" stroke="#145E94" strokeDasharray="2 2" fill="none"/>
+                    <Path d="M34.6666 28.4445H28.5555V22.3334C28.5555 22.186 28.497 22.0447 28.3928 21.9406C28.2886 21.8364 28.1473 21.7778 27.9999 21.7778C27.8526 21.7778 27.7113 21.8364 27.6071 21.9406C27.5029 22.0447 27.4444 22.186 27.4444 22.3334V28.4445H21.3333C21.1859 28.4445 21.0446 28.503 20.9404 28.6072C20.8362 28.7114 20.7777 28.8527 20.7777 29.0001C20.775 29.0723 20.7877 29.1442 20.8151 29.2111C20.8426 29.2779 20.884 29.3381 20.9366 29.3876C20.9893 29.4371 21.0519 29.4747 21.1203 29.4979C21.1888 29.5212 21.2614 29.5295 21.3333 29.5223H27.4444V35.6667C27.4444 35.8141 27.5029 35.9554 27.6071 36.0596C27.7113 36.1637 27.8526 36.2223 27.9999 36.2223C28.1473 36.2223 28.2886 36.1637 28.3928 36.0596C28.497 35.9554 28.5555 35.8141 28.5555 35.6667V29.5556H34.6666C34.8139 29.5556 34.9552 29.4971 35.0594 29.3929C35.1636 29.2887 35.2222 29.1474 35.2222 29.0001C35.2222 28.8527 35.1636 28.7114 35.0594 28.6072C34.9552 28.503 34.8139 28.4445 34.6666 28.4445Z" fill="#145E94"/>
+                  </Svg>
+                </G>
+                <Defs>
+                  <ClipPath id="clip0_add_player_2">
+                    <Rect width="57" height="57" fill="white"/>
+                  </ClipPath>
+                </Defs>
+              </Svg>
             </View>
-            <Text className="text-gray-400 text-sm">player</Text>
-            <Text className="text-gray-400 text-xs">(nickname)</Text>
+            <Text className="-mt-1" style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 14, color: '#210C0C' }}>player</Text>
+            <Text className="-mt-1" style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 12, color: '#B0AAAA' }}>(nickname)</Text>
           </View>
         </View>
       </View>
@@ -115,21 +211,38 @@ const GameCard = ({
       {/* Bottom Section */}
       <View className="px-4 pb-4 flex-row justify-between items-end">
         {/* Weather Info */}
-        <View>
+        <View className="flex-1 mb-2 ml-2">
           <View className="flex-row items-center mb-1">
-            <Text className="text-[#4774AD] text-sm">💧 {precipitation} Precipitation</Text>
+            <Svg width="15" height="15" viewBox="0 0 15 15" fill="none" style={{ marginRight: 4 }}>
+              <Path d="M7.16812 1.07436C7.21167 1.03071 7.26339 0.996071 7.32034 0.97244C7.37729 0.948809 7.43834 0.936646 7.5 0.936646C7.56166 0.936646 7.62271 0.948809 7.67966 0.97244C7.7366 0.996071 7.78833 1.03071 7.83188 1.07436C8.07656 1.31998 9.15188 2.43373 10.1691 3.88967C11.1722 5.32498 12.1875 7.18592 12.1875 8.90623C12.1875 10.575 11.6466 11.8734 10.7663 12.7547C9.88969 13.6331 8.71031 14.0625 7.5 14.0625C6.28969 14.0625 5.11031 13.6331 4.23375 12.7547C3.35344 11.8734 2.8125 10.5759 2.8125 8.90623C2.8125 7.18592 3.82781 5.32498 4.83094 3.89061C5.53331 2.89077 6.31488 1.94899 7.16812 1.07436ZM5.59875 4.42686C4.60969 5.84248 3.75 7.49717 3.75 8.90623C3.75 10.3659 4.21875 11.4122 4.8975 12.0919C5.57812 12.7762 6.51 13.125 7.5 13.125C8.49 13.125 9.42094 12.7753 10.1025 12.0919C10.7822 11.4122 11.25 10.3669 11.25 8.90623C11.25 7.49717 10.3912 5.84342 9.40125 4.42686C8.82105 3.60365 8.18585 2.82061 7.5 2.08311C6.81414 2.82061 6.17894 3.60364 5.59875 4.42686Z" fill="#145E94"/>
+            </Svg>
+            <Text style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 14, color: '#B0AAAA' }}>{precipitation} Precipitation</Text>
           </View>
-          <View className="flex-row items-center">
-            <Text className="text-gray-500 text-sm">☁️ Weather - {weather}</Text>
+          <View className="flex-row items-center -mt-[6px]">
+            <Svg width="19" height="19" viewBox="0 0 19 19" fill="none" style={{ marginRight: 4 }}>
+              <Path d="M10.4502 6.65029C12.7919 6.65029 14.12 8.14559 14.3129 9.95059H14.3718C15.8785 9.95059 17.1002 11.1257 17.1002 12.5754C17.1002 14.0251 15.8785 15.2003 14.3718 15.2003H6.52858C5.02188 15.2003 3.80018 14.0251 3.80018 12.5754C3.80018 11.1257 5.02188 9.95059 6.52858 9.95059H6.58748C6.78223 8.13324 8.10843 6.65029 10.4502 6.65029ZM10.4502 7.60029C8.88268 7.60029 7.51753 8.80679 7.51753 10.474C7.51753 10.7381 7.27623 10.9452 6.99978 10.9452H6.47728C5.52348 10.9452 4.75018 11.6853 4.75018 12.5982C4.75018 13.5093 5.52348 14.2503 6.47728 14.2503H14.4231C15.3769 14.2503 16.1502 13.5102 16.1502 12.5973C16.1502 11.6853 15.3769 10.9452 14.4231 10.9452H13.9006C13.6251 10.9452 13.3828 10.7381 13.3828 10.474C13.3828 8.78589 12.0177 7.60029 10.4502 7.60029ZM7.97258 3.80029C9.35578 3.80029 10.5623 4.58689 11.1579 5.74304C10.7532 5.69286 10.3443 5.68585 9.93813 5.72214C9.70347 5.42011 9.40301 5.17559 9.05961 5.00718C8.7162 4.83877 8.33891 4.75091 7.95643 4.75029C7.35907 4.75313 6.78188 4.9667 6.32656 5.35338C5.87123 5.74006 5.56698 6.27503 5.46743 6.86404L5.43228 7.06354C5.39419 7.28432 5.2793 7.48454 5.1079 7.62882C4.9365 7.77311 4.71962 7.85217 4.49558 7.85204H4.25048C3.47718 7.85204 2.85018 8.48664 2.85018 9.26944C2.85018 9.81094 3.14943 10.2812 3.58928 10.5196C3.38598 10.778 3.21878 11.0668 3.09528 11.3765C2.64271 11.1008 2.28988 10.6879 2.08807 10.1979C1.88626 9.70788 1.846 9.16626 1.97313 8.65178C2.10027 8.13731 2.38818 7.67679 2.795 7.33717C3.20183 6.99755 3.70637 6.79654 4.23528 6.76334L4.44523 6.75859C4.59172 5.92956 5.02558 5.17862 5.67063 4.63763C6.31569 4.09664 7.1307 3.80018 7.97258 3.80029Z" fill="#145E94"/>
+            </Svg>
+            <Text style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 14, color: '#B0AAAA' }}>Weather - {weather}</Text>
           </View>
         </View>
 
         {/* Chat Button */}
         <TouchableOpacity 
-          className="bg-[#4774AD] px-6 py-3 rounded-lg"
-          style={{ minWidth: 80 }}
+          className="left-[14px] bottom-[0px]"
+          style={{ minWidth: 130 }}
         >
-          <Text className="text-white font-semibold text-center">Chat</Text>
+          <LinearGradient
+            colors={['#3199DD', '#32516D']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+            style={{
+              paddingHorizontal: 24,
+              paddingVertical: 16,
+              borderBottomRightRadius: 12,
+            }}
+          >
+            <Text className="text-white font-semibold text-center" style={{ fontFamily: 'Rubik', fontWeight: '500', fontSize: 16 }}>Chat</Text>
+          </LinearGradient>
         </TouchableOpacity>
       </View>
     </View>
