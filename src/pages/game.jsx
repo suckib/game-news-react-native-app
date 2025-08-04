@@ -54,7 +54,7 @@ const Game = ({ navigation }) => {
         </View>
 
         {/* Doubles Games Button */}
-          <View className="mt-2 py-2 ml-[32px]">
+          <View className="mt-1 py-3 ml-[32px]">
             <TouchableOpacity 
               className="rounded-full border items-center justify-center"
               style={{ 
@@ -77,7 +77,16 @@ const Game = ({ navigation }) => {
           </View>
 
         {/* Game Cards */}
-        <View className="p-2 px-9">
+        <View className="p-2 px-9 -mt-1">
+          <GameCard />
+        </View>
+        <View className="p-2 px-9 mt-4">
+          <GameCard />
+        </View>
+        <View className="p-2 px-9 mt-4">
+          <GameCard />
+        </View>
+        <View className="p-2 px-9 mt-4">
           <GameCard />
         </View>
       </ScrollView>
