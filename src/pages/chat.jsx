@@ -5,6 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 const Chat = ({ navigation }) => {
   const [message, setMessage] = useState('');
+  const [messages, setMessages] = useState([]);
 
   const handleGoBack = () => {
     navigation.goBack();
@@ -12,7 +13,19 @@ const Chat = ({ navigation }) => {
 
   const handleSendMessage = () => {
     if (message.trim()) {
-      // Handle sending message logic here
+      const now = new Date();
+      const newMessage = {
+        id: Date.now(),
+        text: message.trim(),
+        timestamp: now.toLocaleTimeString('en-US', { 
+          hour12: false, 
+          hour: '2-digit', 
+          minute: '2-digit' 
+        }),
+        sender: 'Penn N. (panther)',
+        sentAt: now
+      };
+      setMessages(prevMessages => [...prevMessages, newMessage]);
       setMessage('');
     }
   };
@@ -223,7 +236,7 @@ const Chat = ({ navigation }) => {
                   </Text>
                 </View>
               </LinearGradient>
-              <View className="absolute w-[19.5px] h-[30px] bottom-0 -right-4 mr-[3px] mb-[3px]">
+              <View className="absolute w-[20px] h-[30px] bottom-0 -right-4 mr-[3px] mb-[4px]">
                 <Image 
                     source={require('../assets/edge2.png')} 
                     className="w-full h-full"
@@ -233,6 +246,66 @@ const Chat = ({ navigation }) => {
             </View>
           </View>
         </View>
+
+        {/* Dynamic Messages */}
+        {messages.map((msg, index) => {
+          // Check if previous message was sent within 1 minutes
+          const showSender = index === 0 || 
+            !messages[index - 1] || 
+            (msg.sentAt - messages[index - 1].sentAt) > 1 * 60 * 1000; // 1 minutes in milliseconds
+
+          // Use -mt-4 if within 1 minutes, -mt-1 if more than 2 minutes apart
+          const marginTop = index === 0 ? 'mt-3' : (showSender ? '-mt-1' : '-mt-4');
+          
+          return (
+            <View key={msg.id} className={`mb-6 w-full h-auto ${marginTop}`}>
+              <View className="flex-row items-start justify-end relative">
+                <View className="absolute bottom-0 right-0 w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
+                  <Image 
+                        source={require('../assets/wiz_chat.png')} 
+                        className="w-full h-full"
+                        resizeMode="cover"
+                  />
+                </View>
+                <View className="mr-12 right-2 max-w-full">
+                  <LinearGradient
+                    colors={['#32516D', '#3199DD']}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 0 }}
+                    style={{
+                      borderRadius: 16,
+                      padding: 12,
+                      marginLeft: 48,
+                      alignSelf: 'flex-end',
+                      minWidth: 160
+                    }}
+                  >
+                    {showSender && (
+                      <Text className="font-medium mb-1" style={{ fontFamily: 'Rubik', fontWeight: '500', fontSize: 16, color: '#fff' }}>
+                        {msg.sender}
+                      </Text>
+                    )}
+                    <Text className="font-regular" style={{ fontFamily: 'Rubik', fontWeight: '300', fontSize: 14, color: '#fff', lineHeight: 20 }}>
+                      {msg.text}
+                    </Text>
+                    <View className="flex-row justify-end items-end -mt-1">
+                      <Text className="font-regular" style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 12, color: '#fff' }}>
+                        {msg.timestamp}
+                      </Text>
+                    </View>
+                  </LinearGradient>
+                  <View className="absolute w-[20px] h-[30px] bottom-0 -right-4 mr-[3px] mb-[5px]">
+                    <Image 
+                        source={require('../assets/edge2.png')} 
+                        className="w-full h-full"
+                        resizeMode="contain"
+                    />
+                  </View>
+                </View>
+              </View>
+            </View>
+          );
+        })}
       </ScrollView>
 
       {/* Input Area */}
