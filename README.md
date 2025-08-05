@@ -15,15 +15,19 @@ A React Native application built with Expo and styled with NativeWind (Tailwind 
 
 ```
 src/
+├── assets/
 ├── components/          # Reusable UI components
-│   ├── Button.jsx
-│   ├── Card.jsx
+│   ├── footerNavigation.jsx
+│   ├── gameCard.jsx
 │   ├── Header.jsx
+│   ├── newscard1.jsx
+│   ├── newscard2.jsx
+│   ├── systemMessage.jsx
 │   └── index.js
 ├── pages/              # Screen components
-│   ├── HomePage.jsx
-│   ├── ProfilePage.jsx
-│   ├── SettingsPage.jsx
+│   ├── chat.jsx
+│   ├── game.jsx
+│   ├── news.jsx
 │   └── index.js
 └── router/             # Navigation configuration
     └── AppNavigator.jsx
@@ -62,9 +66,9 @@ npm run web
 
 ## 📱 Available Screens
 
-- **Home**: Welcome screen with app features and navigation buttons
-- **Profile**: User profile information with skills and contact details
-- **Settings**: App preferences with toggleable settings
+- **Game**
+- **Chat**
+- **News**
 
 ## 🎨 Styling
 

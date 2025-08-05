@@ -82,6 +82,7 @@ coverage/
 
 # rollup.js default build output
 dist/
+android/
 
 # Uncomment the public line in if your project uses Gatsby
 # https://nextjs.org/blog/next-9-1#public-directory-support
