@@ -226,17 +226,17 @@ const Chat = ({ navigation }) => {
       </ScrollView>
 
       {/* Input Area */}
-      <View className="bg-white px-4 py-3 border-t border-gray-200">
+      <View className="bg-white px-4 py-7 border-t border-[#eeeeee]">
         <View className="flex-row items-center">
-          <TouchableOpacity className="mr-3">
-            <Svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <Path d="M12 6V18M6 12H18" stroke="#4A90C2" strokeWidth="2" strokeLinecap="round"/>
+          <TouchableOpacity className="mr-3 -mt-6">
+            <Svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <Path d="M8.9834 0.51416V7.01416H15.4834V8.98096H8.9834V15.481H7.0166V8.98096H0.516602V7.01416H7.0166V0.51416H8.9834Z" fill="#145E94" stroke="white" strokeWidth="0.2"/>
             </Svg>
           </TouchableOpacity>
           
-          <View className="flex-1 flex-row items-center bg-gray-50 rounded-full px-4 py-2 border border-gray-200">
+          <View className="flex-1 flex-row items-center bg-white -mt-4">
             <TextInput
-              className="flex-1"
+              className="flex-1 -mt-2 py-2"
               placeholder="Add a comment..."
               placeholderTextColor="#999"
               value={message}
@@ -245,7 +245,7 @@ const Chat = ({ navigation }) => {
               style={{ 
                 fontFamily: 'Rubik', 
                 fontWeight: '400', 
-                fontSize: 14,
+                fontSize: 16,
                 color: '#333',
                 maxHeight: 100
               }}
@@ -253,11 +253,11 @@ const Chat = ({ navigation }) => {
           </View>
           
           <TouchableOpacity 
-            className="ml-3 w-10 h-10 bg-[#4A90C2] rounded-full items-center justify-center"
+            className="ml-3 -mt-4 w-10 h-10 bg-[#145E94] rounded-full items-center justify-center"
             onPress={handleSendMessage}
           >
             <Svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <Path d="M18 2L9 11M18 2L12 18L9 11M18 2L2 8L9 11" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <Path d="M2.18405 2.11207C2.2587 2.05108 2.34939 2.01297 2.44519 2.00233C2.541 1.99168 2.63784 2.00896 2.72405 2.05207L17.7241 9.55207C17.8073 9.59354 17.8773 9.65739 17.9262 9.73643C17.9751 9.81548 18.001 9.90661 18.001 9.99957C18.001 10.0925 17.9751 10.1837 17.9262 10.2627C17.8773 10.3418 17.8073 10.4056 17.7241 10.4471L2.72405 17.9471C2.63793 17.9902 2.54117 18.0076 2.44542 17.997C2.34968 17.9865 2.25901 17.9485 2.18433 17.8877C2.10965 17.8268 2.05414 17.7457 2.02446 17.654C1.99479 17.5624 1.99221 17.4641 2.01705 17.3711L3.98305 10.0001L2.01705 2.62907C1.99209 2.53597 1.99458 2.43764 2.02421 2.34591C2.05384 2.25419 2.10935 2.17298 2.18405 2.11207ZM4.88405 10.5001L3.27005 16.5561L16.3821 10.0001L3.26905 3.44407L4.88405 9.50007H11.5001C11.6327 9.50007 11.7598 9.55275 11.8536 9.64652C11.9474 9.74029 12.0001 9.86747 12.0001 10.0001C12.0001 10.1327 11.9474 10.2599 11.8536 10.3536C11.7598 10.4474 11.6327 10.5001 11.5001 10.5001H4.88405Z" fill="white"/>
             </Svg>
           </TouchableOpacity>
         </View>
