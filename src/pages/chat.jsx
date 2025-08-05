@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, TextInput, Image } from 'react-native';
 import Svg, { Path, G, Defs, ClipPath, Rect } from 'react-native-svg';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const Chat = ({ navigation }) => {
   const [message, setMessage] = useState('');
@@ -200,7 +201,16 @@ const Chat = ({ navigation }) => {
               />
             </View>
             <View className="flex-1 mr-12 right-2">
-              <View className="bg-[#4A90C2] rounded-2xl p-3 ml-12">
+              <LinearGradient
+                colors={['#32516D', '#3199DD']}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 0 }}
+                style={{
+                  borderRadius: 16,
+                  padding: 12,
+                  marginLeft: 48
+                }}
+              >
                 <Text className="font-medium mb-1" style={{ fontFamily: 'Rubik', fontWeight: '500', fontSize: 16, color: '#fff' }}>
                   Penn N. (panther)
                 </Text>
@@ -212,8 +222,8 @@ const Chat = ({ navigation }) => {
                     20:00
                   </Text>
                 </View>
-              </View>
-              <View className="absolute w-[19.5px] h-[30px] bottom-0 -right-4 mr-[3px] mb-[2px]">
+              </LinearGradient>
+              <View className="absolute w-[19.5px] h-[30px] bottom-0 -right-4 mr-[3px] mb-[3px]">
                 <Image 
                     source={require('../assets/edge2.png')} 
                     className="w-full h-full"
