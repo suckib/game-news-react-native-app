@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { View, Text, ScrollView, Switch, Image } from 'react-native';
 import Svg, { Path, G, Defs, Mask, ClipPath, Rect } from 'react-native-svg';
 import Header from '../components/Header';
-import Card from '../components/Card';
-import Button from '../components/Button';
 import FooterNavigation from '../components/footerNavigation';
 import NewsCard1 from '../components/newsCard1';
 import NewsCard2 from '../components/newsCard2';
