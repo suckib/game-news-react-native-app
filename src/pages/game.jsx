@@ -84,7 +84,7 @@ const Game = ({ navigation }) => {
       </ScrollView>
       
       {/* Footer Navigation */}
-      <FooterNavigation activeTab="Game board" />
+      <FooterNavigation activeTab="Game board" navigation={navigation} />
     </View>
   );
 };

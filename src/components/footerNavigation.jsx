@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import Svg, { Path, G, Defs, ClipPath, Rect } from 'react-native-svg';
 
-const FooterNavigation = ({ activeTab = 'Game board' }) => {
+const FooterNavigation = ({ activeTab = 'Game board', navigation }) => {
   return (
     <View 
       className="bg-[#1F1B1B] flex-row items-center w-full"
@@ -44,7 +44,10 @@ const FooterNavigation = ({ activeTab = 'Game board' }) => {
       </TouchableOpacity>
 
       {/* Game board */}
-      <TouchableOpacity className="items-center justify-center flex w-[calc(25vw)]">
+      <TouchableOpacity 
+        className="items-center justify-center flex w-[calc(25vw)]"
+        onPress={() => navigation?.navigate('Game')}
+      >
         <View className="mb-1">
           <Svg width="20" height="21" viewBox="0 0 20 21" fill="none">
             <Path 
@@ -94,7 +97,10 @@ const FooterNavigation = ({ activeTab = 'Game board' }) => {
       </TouchableOpacity>
 
       {/* News */}
-      <TouchableOpacity className="items-center justify-center flex w-[calc(25vw)]">
+      <TouchableOpacity 
+        className="items-center justify-center flex w-[calc(25vw)]"
+        onPress={() => navigation?.navigate('News')}
+      >
         <View className="mb-1">
           <Svg width="22" height="20" viewBox="0 0 22 20" fill="none">
             <Path 
