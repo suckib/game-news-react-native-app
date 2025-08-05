@@ -17,7 +17,7 @@ const Chat = ({ navigation }) => {
   };
 
   return (
-    <View className="flex-1 bg-white">
+    <View className="flex-1 bg-[#fafafa]">
       {/* Header */}
       <View className="bg-white h-[150px] px-4 py-3 border-b border-[#eeeeee]" style={{ paddingTop: 50 }}>
         <View className="flex-row items-center justify-center">
@@ -64,20 +64,20 @@ const Chat = ({ navigation }) => {
       </View>
 
       {/* Chat Messages */}
-      <ScrollView className="flex-1 px-4 py-4" showsVerticalScrollIndicator={false}>
+      <ScrollView className="flex-1 px-4 py-4 bg-[#fafafa]" showsVerticalScrollIndicator={false}>
         {/* Message 1 */}
         <View className="mb-6 left-12 ml-1 w-[242px] h-[97px]">
           <View className="flex-row items-start">
             <View className="flex-1">
-              <View className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
-                <Text className="font-semibold mb-1" style={{ fontFamily: 'Rubik', fontWeight: '600', fontSize: 14, color: '#000' }}>
+              <View className="bg-white rounded-2xl p-3 border border-[#EEEEEE]">
+                <Text className="font-medium mb-1" style={{ fontFamily: 'Rubik', fontWeight: '500', fontSize: 16, color: '#210C0C' }}>
                   Penn N. (panther)
                 </Text>
-                <Text style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 14, color: '#333', lineHeight: 20 }}>
+                <Text className="font-medium" style={{ fontFamily: 'Rubik', fontWeight: '300', fontSize: 14, color: '#210C0C', lineHeight: 20 }}>
                   Hey guys, thanks a lot for the impressive game, it was fun!
                 </Text>
-                <View className="flex-row justify-end items-end mt-1">
-                  <Text className="text-xs" style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 12, color: '#999' }}>
+                <View className="flex-row justify-end items-end -mt-1">
+                  <Text className="font-regular" style={{ fontFamily: 'Poppins', fontWeight: '400', fontSize: 12, color: '#999' }}>
                     20:00
                   </Text>
                 </View>
@@ -88,88 +88,138 @@ const Chat = ({ navigation }) => {
         </View>
 
         {/* Message 2 */}
-        <View className="mb-6">
-          <View className="flex-row items-start">
-            <View className="w-10 h-10 rounded-full bg-gray-300 mr-3 overflow-hidden">
-              <View className="w-full h-full bg-gray-400"></View>
+        <View className="mb-6 w-[311px] h-[97px] -mt-1">
+          <View className="flex-row items-start relative">
+            <View className="absolute bottom-0 left-0 w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
+              <Image 
+                    source={require('../assets/wiz_chat.png')} 
+                    className="w-full h-full"
+                    resizeMode="cover"
+              />
             </View>
-            <View className="flex-1">
-              <View className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
-                <Text style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 14, color: '#333', lineHeight: 20 }}>
+            <View className="flex-1 ml-12 left-1">
+              <View className="bg-white rounded-2xl p-3 border border-[#EEEEEE]">
+                <Text className="font-medium" style={{ fontFamily: 'Rubik', fontWeight: '300', fontSize: 14, color: '#210C0C', lineHeight: 20 }}>
                   Certainly, it was fantastic to see how long each point lasted. It's always fun to play with players
                 </Text>
+                <View className="flex-row justify-end items-end -mt-1">
+                  <Text className="font-regular" style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 12, color: '#999' }}>
+                    20:00
+                  </Text>
+                </View>
               </View>
-              <Text className="text-xs mt-1 ml-3" style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 12, color: '#999' }}>
-                20:00
-              </Text>
+              <View className="absolute w-[20px] h-[30px] bottom-0 -left-3">
+                <Image 
+                    source={require('../assets/edge.png')} 
+                    className="w-full h-full"
+                    resizeMode="contain"
+                />
+              </View>
             </View>
           </View>
         </View>
 
         {/* Message 3 */}
-        <View className="mb-6">
-          <View className="flex-row items-start">
-            <View className="w-10 h-10 rounded-full bg-gray-300 mr-3 overflow-hidden">
-              <View className="w-full h-full bg-gray-400"></View>
+        <View className="mb-6 w-[247px] h-[94px] mt-1">
+          <View className="flex-row items-start relative">
+            <View className="absolute bottom-0 left-0 w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
+              <Image 
+                    source={require('../assets/wiz_chat.png')} 
+                    className="w-full h-full"
+                    resizeMode="cover"
+              />
             </View>
-            <View className="flex-1">
-              <View className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
-                <Text className="font-semibold mb-1" style={{ fontFamily: 'Rubik', fontWeight: '600', fontSize: 14, color: '#000' }}>
+            <View className="flex-1 ml-12 left-1">
+              <View className="bg-white rounded-2xl p-3 border border-[#EEEEEE]">
+                <Text className="font-medium mb-1" style={{ fontFamily: 'Rubik', fontWeight: '500', fontSize: 16, color: '#210C0C' }}>
                   Penn N. (panther)
                 </Text>
-                <Text style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 14, color: '#333', lineHeight: 20 }}>
+                <Text className="font-regular" style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 14, color: '#333', lineHeight: 20 }}>
                   The dedication of the ball was stunning.
                 </Text>
+                <View className="flex-row justify-end items-end -mt-1">
+                  <Text className="font-regular" style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 12, color: '#999' }}>
+                    20:00
+                  </Text>
+                </View>
               </View>
-              <Text className="text-xs mt-1 ml-3" style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 12, color: '#999' }}>
-                20:00
-              </Text>
+              <View className="absolute w-[20px] h-[30px] bottom-0 -left-3">
+                <Image 
+                    source={require('../assets/edge.png')} 
+                    className="w-full h-full"
+                    resizeMode="contain"
+                />
+              </View>
             </View>
           </View>
         </View>
 
         {/* Message 4 */}
-        <View className="mb-6">
-          <View className="flex-row items-start">
-            <View className="w-10 h-10 rounded-full bg-gray-300 mr-3 overflow-hidden">
-              <View className="w-full h-full bg-gray-400"></View>
+        <View className="mb-6 w-[247px] h-[94px] mt-3">
+          <View className="flex-row items-start relative">
+            <View className="absolute bottom-0 left-0 w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
+              <Image 
+                    source={require('../assets/wiz_chat.png')} 
+                    className="w-full h-full"
+                    resizeMode="cover"
+              />
             </View>
-            <View className="flex-1">
-              <View className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
-                <Text className="font-semibold mb-1" style={{ fontFamily: 'Rubik', fontWeight: '600', fontSize: 14, color: '#000' }}>
+            <View className="flex-1 ml-12 left-1">
+              <View className="bg-white rounded-2xl p-3 border border-[#EEEEEE]">
+                <Text className="font-medium mb-1" style={{ fontFamily: 'Rubik', fontWeight: '500', fontSize: 16, color: '#210C0C' }}>
                   Penn N. (panther)
                 </Text>
-                <Text style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 14, color: '#333', lineHeight: 20 }}>
+                <Text className="font-regular" style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 14, color: '#333', lineHeight: 20 }}>
                   The dedication of the ball was stunning.
                 </Text>
+                <View className="flex-row justify-end items-end -mt-1">
+                  <Text className="font-regular" style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 12, color: '#999' }}>
+                    20:00
+                  </Text>
+                </View>
               </View>
-              <Text className="text-xs mt-1 ml-3" style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 12, color: '#999' }}>
-                20:00
-              </Text>
+              <View className="absolute w-[20px] h-[30px] bottom-0 -left-3">
+                <Image 
+                    source={require('../assets/edge.png')} 
+                    className="w-full h-full"
+                    resizeMode="contain"
+                />
+              </View>
             </View>
           </View>
         </View>
 
         {/* Message 5 - User's own message (right side) */}
-        <View className="mb-6">
-          <View className="flex-row items-start justify-end">
-            <View className="flex-1 mr-3">
-              <View className="bg-[#4A90C2] rounded-lg p-3 ml-12">
-                <Text className="font-semibold mb-1" style={{ fontFamily: 'Rubik', fontWeight: '600', fontSize: 14, color: '#fff' }}>
+        <View className="mb-6 w-full h-[95px] mt-3">
+          <View className="flex-row items-start justify-end relative">
+            <View className="absolute bottom-0 right-0 w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
+              <Image 
+                    source={require('../assets/wiz_chat.png')} 
+                    className="w-full h-full"
+                    resizeMode="cover"
+              />
+            </View>
+            <View className="flex-1 mr-12 right-2">
+              <View className="bg-[#4A90C2] rounded-2xl p-3 ml-12">
+                <Text className="font-medium mb-1" style={{ fontFamily: 'Rubik', fontWeight: '500', fontSize: 16, color: '#fff' }}>
                   Penn N. (panther)
                 </Text>
-                <Text style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 14, color: '#fff', lineHeight: 20 }}>
+                <Text className="font-regular" style={{ fontFamily: 'Rubik', fontWeight: '300', fontSize: 14, color: '#fff', lineHeight: 20 }}>
                   I'm crossing my fingers that the next game will be crazy!
                 </Text>
+                <View className="flex-row justify-end items-end -mt-1">
+                  <Text className="font-regular" style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 12, color: '#fff' }}>
+                    20:00
+                  </Text>
+                </View>
               </View>
-              <View className="flex-row justify-end mt-1 mr-3">
-                <Text className="text-xs" style={{ fontFamily: 'Rubik', fontWeight: '400', fontSize: 12, color: '#999' }}>
-                  20:00
-                </Text>
+              <View className="absolute w-[19.5px] h-[30px] bottom-0 -right-4 mr-[3px] mb-[2px]">
+                <Image 
+                    source={require('../assets/edge2.png')} 
+                    className="w-full h-full"
+                    resizeMode="contain"
+                />
               </View>
-            </View>
-            <View className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
-              <View className="w-full h-full bg-gray-400"></View>
             </View>
           </View>
         </View>
