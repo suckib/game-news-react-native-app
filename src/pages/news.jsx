@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, Switch, Image } from 'react-native';
 import Svg, { Path, G, Defs, Mask, ClipPath, Rect } from 'react-native-svg';
-import Header from '../components/Header';
-import FooterNavigation from '../components/footerNavigation';
-import NewsCard1 from '../components/newsCard1';
-import NewsCard2 from '../components/newsCard2';
-import SystemMessage from '../components/systemMessage';
+import Header from '../components/Header.jsx';
+import FooterNavigation from '../components/footerNavigation.jsx';
+import NewsCard1 from '../components/newsCard1.jsx';
+import NewsCard2 from '../components/newsCard2.jsx';
+import SystemMessage from '../components/systemMessage.jsx';
 
 const News = ({ navigation }) => {
 

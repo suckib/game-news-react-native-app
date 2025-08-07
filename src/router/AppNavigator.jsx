@@ -3,9 +3,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // Import pages
-import Game from '../pages/game';
-import Chat from '../pages/chat';
-import News from '../pages/news';
+import Game from '../pages/game.jsx';
+import Chat from '../pages/chat.jsx';
+import News from '../pages/news.jsx';
 
 const Stack = createNativeStackNavigator();
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
-import Header from '../components/Header';
-import GameCard from '../components/gameCard';
-import FooterNavigation from '../components/footerNavigation';
+import Header from '../components/Header.jsx';
+import GameCard from '../components/gameCard.jsx';
+import FooterNavigation from '../components/footerNavigation.jsx';
 import Svg, { Path } from 'react-native-svg';
 
 const Game = ({ navigation }) => {
