@@ -111,6 +111,6 @@ To build for production, you can use Expo's build services or eject to native co
 
 ## Build 
 
-Exported the JavaScript bundle using ```npx expo export --platform android```
-Configured Android SDK path inside built android directory local.properties
-Built the production APK using ```.\gradlew.bat assembleRelease```
+- Exported the JavaScript bundle using ```npx expo export --platform android```
+- Configured Android SDK path inside built android directory local.properties
+- Built the production APK using ```.\gradlew.bat assembleRelease```
