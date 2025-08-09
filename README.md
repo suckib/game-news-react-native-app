@@ -107,3 +107,10 @@ This app uses NativeWind, which allows you to use Tailwind CSS classes directly 
 ## 🚀 Deployment
 
 To build for production, you can use Expo's build services or eject to native code. Refer to Expo documentation for detailed deployment instructions.
+
+
+## Build 
+
+Exported the JavaScript bundle using ```npx expo export --platform android```
+Configured Android SDK path inside built android directory local.properties
+Built the production APK using ```.\gradlew.bat assembleRelease```
